@@ -1,9 +1,14 @@
-function App() {
+import {RangeCalendar} from "@nextui-org/react";
+import {today, getLocalTimeZone} from '@internationalized/date';
+import logoGold from "./assets/img/logos/logo_dorado_texto.png"
+
+export default function App() {
   return (
-    <>
-      <span className="font-Bodoni text-4xl text-CGold">Everyone</span>
-    </>
+    <div className="bg-black w-full h-screen flex items-center justify-center">
+       <img src={logoGold} alt="" />
+    </div>
+    
   );
 }
 
-export default App;
+
