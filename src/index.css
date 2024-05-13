@@ -1,7 +1,35 @@
 /* Fonts of project */
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --button-bg-color-black: #070707; /* Color de fondo del botón negro */
+    --button-text-color-black: #F2F2F2; /* Color del texto del botón negro */
+    --button-bg-color-white: #ebebeb; /* Color de fondo del botón blanco */
+    --button-text-color-white: #070707; /* Color del texto del botón blanco */
+  }
+  *{
+    letter-spacing: .7px;
+  }
+
+  .btn-black {
+    background-color: var(--button-bg-color-black);
+    color: var(--button-text-color-black);
+    &:hover{
+        background-color: #0c0c0c;
+    }
+  }
+  
+  .btn-white {
+    background-color: var(--button-bg-color-white);
+    color: var(--button-text-color-white);
+    font-weight: 700;
+    &:hover{
+        background-color: #f0f0f0;
+    }
+  }

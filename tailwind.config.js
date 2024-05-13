@@ -19,8 +19,12 @@ export default {
         CGold: "#D89B00",
       },
       fontFamily: {
-        Bodoni: ["Bodoni Moda", "serif"],
+        Playfair: ["Playfair Display", "serif"],
         Lato: ["Lato", "sans-serif"],
+      },
+
+      fontSize: {
+          base: "14px"
       },
     },
   },
