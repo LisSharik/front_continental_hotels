@@ -1,0 +1,13 @@
+[
+  {
+    "id":1,
+    "url": "src/assets/img/logos/logo_blanco_texto.png"
+  },
+  {
+    "id":2,
+    "url": "src/assets/img/logos/logo_negro_texto.png"
+  },
+  { "id":3,
+    "url": "src/assets/img/logos/logo_dorado_texto.png"
+  }
+]
