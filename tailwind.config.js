@@ -16,7 +16,7 @@ export default {
         CBlack: "#070707",
         CGray: "#E4E4E4",
         CWhite: "#F2F2F2",
-        CGold: "#D89B00",
+        CGold: "#FFC700",
       },
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
@@ -24,8 +24,11 @@ export default {
       },
 
       fontSize: {
+          big: "42px",
           base: "14px"
       },
+
+      
     },
   },
   darkMode: "class",

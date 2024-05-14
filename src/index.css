@@ -13,23 +13,35 @@
     --button-bg-color-white: #ebebeb; /* Color de fondo del botón blanco */
     --button-text-color-white: #070707; /* Color del texto del botón blanco */
   }
-  *{
-    letter-spacing: .7px;
-  }
 
-  .btn-black {
-    background-color: var(--button-bg-color-black);
-    color: var(--button-text-color-black);
-    &:hover{
-        background-color: #0c0c0c;
-    }
+*{
+  letter-spacing: .7px;
+}
+
+body{
+  overflow-x: hidden
+}
+
+h1{
+  @apply text-CWhite;
+  @apply font-Playfair;
+  @apply text-big;
+  font-weight: 600;
+}
+
+.btn-black {
+  background-color: var(--button-bg-color-black);
+  color: var(--button-text-color-black);
+  &:hover{
+      background-color: #0c0c0c;
   }
-  
-  .btn-white {
-    background-color: var(--button-bg-color-white);
-    color: var(--button-text-color-white);
-    font-weight: 700;
-    &:hover{
-        background-color: #f0f0f0;
-    }
+}
+
+.btn-white {
+  background-color: var(--button-bg-color-white);
+  color: var(--button-text-color-white);
+  font-weight: 700;
+  &:hover{
+    @apply bg-CGold;
   }
+}
