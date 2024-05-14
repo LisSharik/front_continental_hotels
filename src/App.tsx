@@ -1,9 +1,13 @@
-function App() {
+import logoGold from "./assets/img/logos/logo_dorado_texto.png"
+
+
+export default function App() {
   return (
-    <>
-      <span className="font-Bodoni text-4xl text-CGold">Everyone</span>
-    </>
+    <div className="bg-CBlack w-full h-auto flex items-center justify-start flex-col ">
+      <img src={logoGold} alt="" />
+    </div>
+    
   );
 }
 
-export default App;
+
