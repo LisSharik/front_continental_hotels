@@ -26,7 +26,7 @@ export default function Menu() {
         <img src={imgLogoWhite} width="40px" alt="Logo Continental Hotels" />
       </a>
 
-      <div className="hidden  md:flex items-center space-x-8 text-CWhite font-Playfair font-medium text-base h-1/2">
+      <div className="hidden md:flex items-center space-x-8 text-CWhite font-Playfair font-medium text-base h-1/2">
         <a href='#' className='hover:text-CGold transition-all hover:scale-[1.06]'>Inicio</a>
         <a href='#' className='hover:text-CGold transition-all hover:scale-[1.06]'>Habitaciones</a>
         <a href='#' className='hover:text-CGold transition-all hover:scale-[1.06]'>Contactos</a>

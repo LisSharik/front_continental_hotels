@@ -25,7 +25,7 @@ const BannerBasic: React.FC<ImgProps> = ({ imgUrl, messageBanner, isVideo }) => 
 
             <div className="w-full h-full absolute -z-10 brightness-[.3] blur-[1px]">
                 {isVideo ? ( // Si isVideo es true, renderiza un video
-                    <video src={imgUrl.join()}></video>
+                    <video src={imgUrl.join()} className="w-full h-full"></video>
 
                 ) : ( // Si no es un video, renderiza imágenes
                     imgUrl.map((url, index) => (
