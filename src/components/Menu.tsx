@@ -18,7 +18,6 @@ export default function Menu() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  // "w-screen h-20 absolute top-0 flex justify-around items-center px-4 md:px-0 z-10"
   return (
     <header className={`w-screen fixed top-0 h-20 flex justify-around items-center px-4 md:px-0 z-50 ${scroll ? 'bg-CBlack transition-all duration-300' : 'bg-transparent transition-all duration-300'}`}>
 
