@@ -3,7 +3,7 @@ import 'boxicons/css/boxicons.css';
 
 export default function Footer(){
     return (
-        <div className="bg-CBlack w-screen h-auto flex justify-center items-center flex-col gap-8 py-[30px]">
+        <footer className="bg-CBlack w-screen h-auto flex justify-center items-center flex-col gap-8 py-[30px]">
             <img src={imgLogoWhite} width={"140px"} alt="Logo" />
             {/* footer content */}
             <div className="w-4/5 flex justify-center items-start text-CWhite font-Lato gap-20 flex-col md:flex-row md:items-start md:text-left max-md:items-center">
@@ -59,6 +59,6 @@ export default function Footer(){
 
             </div>
             <p className="text-CWhite mt-2 font-semibold text-[10px]">Copyright&#169;2024</p>
-        </div>
+        </footer>
     );
 }

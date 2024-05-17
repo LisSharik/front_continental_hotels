@@ -61,6 +61,43 @@ p{
   font-size: 16px;
 }
 
+.icons-admin{
+  font-size: 45px;
+}
+
+
+.admin-option{
+  @apply w-full ;
+  @apply h-14;
+  @apply flex;
+  @apply justify-start;
+  @apply items-center;
+  @apply text-CWhite;
+  @apply  gap-1 ;
+  @apply  transition-[.4s] ;
+
+  padding-left: 15%;
+
+  & i{
+    font-size: 22px;
+  }
+  & p{
+    font-weight: 500 ;
+    @apply text-baseSecundary;
+  }
+
+  &:hover{
+    background-color: #252525;
+
+  }
+
+  &:focus{
+    @apply bg-CWhite;
+    @apply text-CBlack;
+  }
+}
+
+
 .social-media{
   font-size: 24px;
   transition: .3s;
