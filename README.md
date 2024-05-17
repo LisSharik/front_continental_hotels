@@ -12,6 +12,7 @@ This project is the user interface for the Continental Hotels hotel management s
 ## Project Structure
 
 The project is organized as follows:
+```markdown
 
 front_continental_hotels/
 ├── src/
@@ -28,6 +29,8 @@ front_continental_hotels/
 │ │ ├── img360.jpg
 │ ├── App.tsx
 │ ├── main.tsx
+
+```
 
 ## Prerequisites
 
