@@ -19,7 +19,9 @@
 }
 
 body{
-  overflow-x: hidden
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
 }
 
 h1{
@@ -54,6 +56,14 @@ p{
   font-weight: 700;
   &:hover{
     @apply bg-CGold;
+  }
+}
+
+.btn-add{
+  font-weight: 500;
+  font-size: 16px;
+  & i{
+    font-size: 24px;
   }
 }
 
@@ -96,6 +106,11 @@ p{
     @apply text-CBlack;
   }
 }
+
+.title i{
+  font-size: 40px;
+}
+
 
 
 .social-media{

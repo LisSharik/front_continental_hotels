@@ -1,4 +1,5 @@
 import React from "react";
+import {Button} from "@nextui-org/react";
 
 interface TableAdminProps {
     nameTable: string;
@@ -29,12 +30,16 @@ const TableAdmin: React.FC<TableAdminProps> = ({ nameTable, iconTable, data }) =
     };
 
     return (
-        <div className="w-full h-full flex flex-col justify-start items-center p-4">
-            <div className="w-full h-[10vh] bg-CWhite flex justify-between items-center mb-4">
-                <div className="flex items-center gap-2">
-                    <i className={`bx ${iconTable} text-2xl`}></i>
-                    <h2 className="text-2xl font-bold">{nameTable}</h2>
+        <div className="w-[80vw] h-full flex flex-col justify-start items-center p-4 table-admin">
+            <div className="w-11/12 h-[10%] bg-CWhite flex justify-start items-center mb-4">
+                <div className="flex justify-start items-center  gap-2 title">
+                    <i className={`bx ${iconTable} icon-table`}></i>
+                    <h2 className="text-subtitulos font-Lato  font-bold">{nameTable}</h2>
                 </div>
+                <Button className="bg-[#1c9738] text-CWhite btn-add">
+                    <i className='bx bxs-plus-circle '></i>
+                    Agregar  
+                </Button>
             </div>
             {data.length > 0 ? (
                 <table className="table-auto w-full">

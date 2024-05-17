@@ -8,7 +8,7 @@ interface SideMenuAdminProps {
 
 const SideMenuAdmin: React.FC<SideMenuAdminProps> = ({ onButtonClick }) => {
     return (
-        <div className="bg-CBlack w-[22vw] h-auto flex justify-start items-center flex-col gap-5 pb-[5.3vw]">
+        <div className="bg-CBlack w-[20vw] h-full flex justify-start items-center flex-col">
             <GeneratorBtnAdmin icon='bxs-buildings' text='Hoteles' onButtonClick={onButtonClick} />
             <GeneratorBtnAdmin icon='bxs-building' text='Pisos' onButtonClick={onButtonClick} />
             <GeneratorBtnAdmin icon='bxs-hotel' text='Habitaciones' onButtonClick={onButtonClick} />

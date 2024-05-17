@@ -55,11 +55,12 @@ const AdminPage: React.FC = () => {
     };
 
     return (
-        <div className="w-full h-full bg-CWhite">
+        <div className="w-full h-full bg-CGray">
             <TopMenuAdmin />
-            <div className="flex w-full">
+            <div className="flex w-full h-full justify-center items-start">
                 <SideMenuAdmin onButtonClick={handleButtonClick} />
-                <div className="flex-1">
+                <div className="flex justify-center items-start h-full">
+                    
                     <TableAdmin nameTable={currentTable.name} iconTable={currentTable.icon} data={currentTable.data} />
                 </div>
             </div>
