@@ -16,6 +16,7 @@
     "@nextui-org/react": "^2.3.6",
     "@nextui-org/table": "^2.0.33",
     "@react-stately/data": "^3.11.3",
+    "axios": "^1.6.8",
     "boxicons": "^2.1.4",
     "framer-motion": "^11.1.9",
     "react": "^18.2.0",
