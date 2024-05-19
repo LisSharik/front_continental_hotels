@@ -1,0 +1,59 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+#root {
+  max-width: auto !important;
+  background-size: cover;
+  width: auto !important;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+
+}
+
+.register-form{
+  display: flex;
+  flex-direction: row;
+  border-radius: 18px !important;
+  box-shadow: 0 0 2em rgba(3, 0, 7, 0.551);
+}
+
+.container img {
+  transition: transform 0.5s;
+}
+
+.container img:nth-child(1) {
+  transform: translateX(-100%);
+}
+
+.container img:nth-child(2) {
+  transform: translateX(100%);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+.imgs{
+  height: 25rem;
+  width: auto;
+}
+
+h1{
+  color: rgb(1, 1, 17);
+  font-weight: 600;
+  font-family:monospace;
+}
+
