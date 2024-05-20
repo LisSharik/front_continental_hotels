@@ -19,7 +19,9 @@
 }
 
 body{
-  overflow-x: hidden
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
 }
 
 h1{
@@ -57,9 +59,41 @@ p{
   }
 }
 
+.btn-add{
+  font-weight: 500;
+  & i{
+    font-size: 24px;
+  }
+}
+
 .bx{
   font-size: 16px;
 }
+
+.icons-admin{
+  font-size: 45px;
+}
+
+
+.admin-option{
+  padding-left: 15%;
+
+  & i{
+    font-size: 22px;
+  }
+  & p{
+    font-weight: 500 ;
+    @apply text-baseSecundary;
+  }
+
+
+} 
+
+.title i{
+  font-size: 40px;
+}
+
+
 
 .social-media{
   font-size: 24px;
@@ -70,5 +104,18 @@ p{
     @apply bg-CGold;
     @apply text-CBlack
     
+  }
+}
+
+
+@media (max-width:768px){
+  .btn-add{
+    & i{
+      font-size: 22px;
+    }
+  }
+
+  .icon-table{
+       font-size: 12px;   
   }
 }
