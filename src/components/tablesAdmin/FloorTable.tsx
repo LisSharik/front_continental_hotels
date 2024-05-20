@@ -14,6 +14,7 @@ const FloorTable: React.FC = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editingData, setEditingData] = useState<any | null>(null);
   const [hotels, setHotels] = useState<any[]>([]);
+  const [hotelMap, setHotelMap] = useState<{ [key: string]: string }>({});
   const [formData, setFormData] = useState<any>({});
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const FloorTable: React.FC = () => {
     { key: "number", label: "Number" },
     { key: "numberOfRooms", label: "Number of Rooms" },
     { key: "statusFloor", label: "Status" },
-    { key: "hotelId", label: "Hotel ID" }
+    { key: "hotelName", label: "Hotel Name" }
   ];
 
   const modalColumns = [
@@ -72,7 +73,13 @@ const FloorTable: React.FC = () => {
     setLoading(true);
     try {
       const result = await fetchData(API_URLS.FLOORS, currentPage, 7);
-      setData(result.content);
+      // Map hotelId to hotelName in the data
+      const dataWithHotelNames = result.content.map((item: any) => ({
+        ...item,
+        hotelName: item.hotelToFloorResponse ? item.hotelToFloorResponse.name : "Unknown"
+      }));
+      console.log("Data with hotel names:", dataWithHotelNames);
+      setData(dataWithHotelNames);
       setTotalPages(result.totalPages);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -84,6 +91,13 @@ const FloorTable: React.FC = () => {
     try {
       const result = await fetchData(API_URLS.HOTELS, 1, 50);
       setHotels(result.content);
+      // Create a map of hotelId to hotelName
+      const map: { [key: string]: string } = {};
+      result.content.forEach((hotel: any) => {
+        map[hotel.id] = hotel.name;
+      });
+      console.log("Hotel map:", map);
+      setHotelMap(map);
     } catch (error) {
       console.error("Failed to fetch hotels:", error);
     }
