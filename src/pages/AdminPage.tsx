@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import TopMenuAdmin from "../components/TopMenuAdmin";
 import SideMenuAdmin from "../components/SideMenuAdmin";
 import HotelsTable from "../components/tablesAdmin/HotelsTable"; 
-import RoomsTable from '../components/tablesAdmin/RoomTable';
 import FloorTable from '../components/tablesAdmin/FloorTable';
 
 const AdminPage: React.FC = () => {
@@ -15,9 +14,6 @@ const AdminPage: React.FC = () => {
 
                 case 'Floors':
                     return <FloorTable/>
-
-            case 'Rooms':
-                return <RoomsTable />;
   
             default:
                 return null;
