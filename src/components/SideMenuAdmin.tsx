@@ -31,9 +31,18 @@ const SideMenuAdmin: React.FC<SideMenuAdminProps> = ({ onButtonClick }) => {
     });
 
     return (
-        <div className="bg-CBlack w-[20vw] h-full flex justify-start items-center flex-col">
-            {buttons}
-        </div>
+        <>
+            <div className="hidden md:flex  w-[20vw] h-full flex-col items-center bg-CBlack max-md:bg-transparent ">
+                {buttons}
+            </div>
+            <div className="md:hidden w-full flex overflow-x-auto  p-4 ">
+                {buttons.map((button, index) => (
+                    <div key={index} className="mx-2 ">
+                        {button}
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
 

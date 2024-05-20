@@ -6,42 +6,45 @@ import { API_URLS } from "../../data/ApiUrls";
 import { ICONS } from "../../utils/Icons";
 import ModalForm from "../../utils/ModalForm";
 
-const HotelsTable: React.FC = () => {
+const FloorTable: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [modalVisible, setModalVisible] = useState(false);
   const [editingData, setEditingData] = useState<any | null>(null);
-  const [formData, setFormData] = useState<any>({}); // Nuevo estado para el formulario
+  const [hotels, setHotels] = useState<any[]>([]);
+  const [formData, setFormData] = useState<any>({});
 
   useEffect(() => {
     loadData();
+    loadHotels();
   }, [currentPage]);
 
   const tableColumns = [
-    { key: "name", label: "Name", type: "text" },
-    { key: "location", label: "Location", type: "text" },
-    { key: "calification", label: "Rating", type: "text" },
-    { key: "contact", label: "Contact", type: "text" },
-    { key: "earnings", label: "Earnings", type: "text" },
-    { key: "numberOfFloors", label: "Number Floors", type: "text" }
+    { key: "number", label: "Number" },
+    { key: "numberOfRooms", label: "Number of Rooms" },
+    { key: "statusFloor", label: "Status" },
+    { key: "hotelId", label: "Hotel ID" }
   ];
 
   const modalColumns = [
-    { key: "name", label: "Name", type: "text" },
-    { key: "location", label: "Location", type: "text" },
-    { key: "calification", label: "Rating", type: "text" },
-    { key: "contact", label: "Contact", type: "text" },
-    { key: "numberOfFloors", label: "Number Floors", type: "text" }
+    { key: "number", label: "Number", type: "number" },
+    { key: "numberOfRooms", label: "Number of Rooms", type: "number" },
+    {
+      key: "hotelId", label: "Hotel", type: "select", options: hotels.map(hotel => ({
+        value: hotel.id, label: hotel.name
+      }))
+    }
   ];
 
   const handleSave = async (formData: any) => {
+    console.log("Form Data:", formData);
     try {
       if (editingData) {
-        await updateData(`${API_URLS.HOTELS}/${editingData.id}`, formData);
+        await updateData(`${API_URLS.FLOORS}/${editingData.id}`, formData);
       } else {
-        await createData(API_URLS.HOTELS, formData);
+        await createData(API_URLS.FLOORS, formData);
       }
       setModalVisible(false);
       setEditingData(null);
@@ -58,7 +61,7 @@ const HotelsTable: React.FC = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      await deleteData(`${API_URLS.HOTELS}/${id}`);
+      await deleteData(`${API_URLS.FLOORS}/${id}`);
       setData(prevData => prevData.filter(item => item.id !== id));
     } catch (error) {
       console.error("Failed to delete data:", error);
@@ -68,7 +71,7 @@ const HotelsTable: React.FC = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const result = await fetchData(API_URLS.HOTELS, currentPage, 7);
+      const result = await fetchData(API_URLS.FLOORS, currentPage, 7);
       setData(result.content);
       setTotalPages(result.totalPages);
     } catch (error) {
@@ -77,16 +80,25 @@ const HotelsTable: React.FC = () => {
     setLoading(false);
   };
 
+  const loadHotels = async () => {
+    try {
+      const result = await fetchData(API_URLS.HOTELS, 1, 50);
+      setHotels(result.content);
+    } catch (error) {
+      console.error("Failed to fetch hotels:", error);
+    }
+  };
+
   return (
     <div className="w-5/6 h-full flex flex-col items-center pt-8 max-md:w-[90vw]">
       <div className="w-full h-20 bg-CWhite flex justify-between items-center mb-4 px-6 rounded-lg shadow-md max-md:h-16 max-md:px-4">
         <div className="flex justify-start items-center gap-2 title">
-          <i className={`bx ${ICONS.Hotels} icon-table`}></i>
-          <h2 className="text-subtitulos font-Lato font-bold max-md:text-baseSecundary">Hotels</h2>
+          <i className={`bx ${ICONS.Floors} icon-table`}></i>
+          <h2 className="text-subtitulos font-Lato font-bold max-md:text-baseSecundary">Floors</h2>
         </div>
         <Button className="bg-[#1c9738] text-CWhite btn-add flex gap-1" onPress={() => { setEditingData(null); setModalVisible(true); }}>
           <i className='bx bxs-plus-circle'></i>
-          New Hotel
+          New Floor
         </Button>
       </div>
       {loading ? (
@@ -94,9 +106,9 @@ const HotelsTable: React.FC = () => {
       ) : (
         <div className="w-full">
           <div className="overflow-x-auto w-full">
-            <BaseTable 
-              data={data} 
-              columns={tableColumns} 
+            <BaseTable
+              data={data}
+              columns={tableColumns}
               renderActions={(item: any) => (
                 <div className="flex gap-2">
                   <Button color="primary" onPress={() => handleEdit(item)}>
@@ -116,28 +128,28 @@ const HotelsTable: React.FC = () => {
           </div>
         </div>
       )}
-      <Modal 
-        isOpen={modalVisible} 
+      <Modal
+        isOpen={modalVisible}
         placement="center"
-        onOpenChange={setModalVisible} 
+        onOpenChange={setModalVisible}
       >
         <ModalContent>
-          <ModalHeader className="flex flex-col gap-1">{editingData ? "Edit Hotel" : "New Hotel"}</ModalHeader>
+          <ModalHeader className="flex flex-col gap-1">{editingData ? "Edit Floor" : "New Floor"}</ModalHeader>
           <ModalBody>
             <ModalForm
               visible={modalVisible}
               onClose={() => setModalVisible(false)}
               onSave={handleSave}
-              columns={modalColumns} 
+              columns={modalColumns}
               initialData={editingData}
-              setFormData={setFormData} // Pasamos la función para actualizar el estado del formulario
+              setFormData={setFormData}
             />
           </ModalBody>
           <ModalFooter>
             <Button color="danger" variant="light" onPress={() => setModalVisible(false)}>
               Close
             </Button>
-            <Button color="primary" onPress={() => handleSave(formData)}> {/* Pasamos formData a handleSave */}
+            <Button color="primary" onPress={() => handleSave(formData)}>
               Save
             </Button>
           </ModalFooter>
@@ -147,4 +159,4 @@ const HotelsTable: React.FC = () => {
   );
 };
 
-export default HotelsTable;
+export default FloorTable;

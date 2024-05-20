@@ -1,15 +1,13 @@
 import React from 'react';
+import { Button } from "@nextui-org/react";
 
 interface BaseTableProps {
     data: any[];
     columns: { key: string, label: string }[];
-    onPageChange: (page: number) => void;
-    currentPage: number;
-    totalPages: number;
-    renderActions: (item: any) => JSX.Element; // Agrega renderActions para pasar botones de acciones
+    renderActions: (item: any) => JSX.Element;
 }
 
-const BaseTable: React.FC<BaseTableProps> = ({ data, columns, onPageChange, currentPage, totalPages, renderActions }) => {
+const BaseTable: React.FC<BaseTableProps> = ({ data, columns, renderActions }) => {
     const renderTableHeader = () => {
         return (
             <tr>
@@ -36,27 +34,16 @@ const BaseTable: React.FC<BaseTableProps> = ({ data, columns, onPageChange, curr
         ));
     };
 
-    const renderPagination = () => {
-        return (
-            <div className="flex justify-center items-center my-4">
-                <button disabled={currentPage === 1} onClick={() => onPageChange(currentPage - 1)}>Previous</button>
-                <span className="mx-4">Page {currentPage} of {totalPages}</span>
-                <button disabled={currentPage === totalPages} onClick={() => onPageChange(currentPage + 1)}>Next</button>
-            </div>
-        );
-    };
-
     return (
-        <div className="w-full h-full flex flex-col justify-start items-center p-4 table-admin ">
+        <div className="overflow-x-auto w-full">
             <table className="table-auto w-full bg-CWhite rounded-lg shadow-md">
-                <thead className=''>
+                <thead>
                     {renderTableHeader()}
                 </thead>
                 <tbody>
                     {renderTableData()}
                 </tbody>
             </table>
-            {renderPagination()}
         </div>
     );
 }

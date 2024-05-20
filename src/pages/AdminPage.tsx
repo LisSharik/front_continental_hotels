@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TopMenuAdmin from "../components/TopMenuAdmin";
 import SideMenuAdmin from "../components/SideMenuAdmin";
-import HotelsTable from "../components/tablesAdmin/HotelsTable"; // Importa otros componentes de tabla específicos según sea necesario
+import HotelsTable from "../components/tablesAdmin/HotelsTable"; 
+import RoomsTable from '../components/tablesAdmin/RoomTable';
+import FloorTable from '../components/tablesAdmin/FloorTable';
 
 const AdminPage: React.FC = () => {
     const [selectedTable, setSelectedTable] = useState<string>('Hotels');
@@ -10,21 +12,25 @@ const AdminPage: React.FC = () => {
         switch (selectedTable) {
             case 'Hotels':
                 return <HotelsTable />;
-            case 'Floors':
-                // return <FloorsTable />;
-            // Añade más casos para otras tablas
+
+                case 'Floors':
+                    return <FloorTable/>
+
+            case 'Rooms':
+                return <RoomsTable />;
+  
             default:
                 return null;
         }
     };
 
     return (
-        <div className="w-full h-full bg-CGray">
+        <div className="w-screen h-auto bg-CGray ">
             <TopMenuAdmin />
             
-            <div className="flex w-full h-full justify-center items-start">
+            <div className="flex w-full h-screen justify-start items-start max-md:flex-col max-md:h-auto ">
                 <SideMenuAdmin onButtonClick={setSelectedTable} />
-                <div className="flex justify-center items-start h-full w-[80vw]">
+                <div className="flex justify-center items-start h-full w-[80vw] max-md:w-full ">
                     {renderTable()}
                 </div>
             </div>

@@ -2,5 +2,8 @@ export const ICONS = {
     Hotels: 'bxs-buildings',
     Floors: 'bxs-building',
     Rooms: 'bxs-hotel',
-    // Añade más iconos según tus necesidades
+    Bookings: "bxs-book",
+    Customers: "bxs-user-detail",
+    Guest: "bxs-user-badge",
+    RoomType: "bxs-bed"
 };

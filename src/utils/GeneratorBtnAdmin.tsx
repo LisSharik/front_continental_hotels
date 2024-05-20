@@ -11,7 +11,7 @@ interface btnProps {
 const GeneratorBtnAdmin: React.FC<btnProps> = ({ icon, text, onButtonClick, isSelected }) => {
     return (
         <button 
-            className={`admin-option w-full h-14 flex justify-start items-center gap-1 transition-[.4s]  ${isSelected ? 'bg-CGray text-CBlack ' : 'text-CWhite hover:bg-[#252525]'}`} 
+            className={`admin-option w-full h-14 flex justify-start items-center gap-1 transition-[.4s] max-md:bg-CWhite max-md:px-8  max-md:rounded-full max-md:h-10 ${isSelected ? 'bg-CGray  text-CBlack max-md:bg-[#c4c4c4] ' : 'text-CWhite max-md:text-CBlack hover:bg-[#252525]'}`} 
             id={`btn-${text}`} 
             onClick={() => onButtonClick(text, icon)}
         >

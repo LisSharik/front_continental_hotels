@@ -61,7 +61,6 @@ p{
 
 .btn-add{
   font-weight: 500;
-  font-size: 16px;
   & i{
     font-size: 24px;
   }
@@ -105,5 +104,18 @@ p{
     @apply bg-CGold;
     @apply text-CBlack
     
+  }
+}
+
+
+@media (max-width:768px){
+  .btn-add{
+    & i{
+      font-size: 22px;
+    }
+  }
+
+  .icon-table{
+       font-size: 12px;   
   }
 }
