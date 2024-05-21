@@ -16,7 +16,7 @@ export default function TopMenuAdmin(){
                 <img src={imgLogoTextoBlanco} width={"180px"} alt="" />
             </div>
             <div>
-                <Link to={"/"} className='hover:scale-110 transition-[.2s]'>
+                <Link to={"/logout"} className='hover:scale-110 transition-[.2s]'>
  
                     <i className='bx bx-log-out icons-admin'></i>
                 </Link>

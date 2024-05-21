@@ -1,0 +1,95 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+
+.containers{
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  font-weight: 500;
+  color: #eeeef8;
+  text-decoration: inherit;
+  font-size: larger;
+}
+.register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #080606;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  background-color: rgba(230, 232, 241, 0.625);
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.863);
+
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  width: 90%;
+  height: 100%;
+  padding: 2em;
+  background-color: rgba(230, 232, 241, 0.625);
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+}
+
+.containers{
+  border-radius: 18px;
+}
+
+
+.main{
+  border-radius: 4px !important;
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  background-image: url('../../public/5a0e800cf96350bffc91fbe118132f99.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #0e0e0e;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: #3e3d3f;
+}

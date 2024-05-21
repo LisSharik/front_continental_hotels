@@ -1,0 +1,61 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua  ;
+
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px !important;
+  width: 80%;
+  box-shadow: 0 0 2em rgba(8, 8, 8, 0.678);
+}
+
+.register-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px !important;
+  width: 80%;
+  box-shadow: 0 0 2em rgba(8, 8, 8, 0.678);
+}
+
+.container img {
+  transition: transform 0.5s;
+}
+
+.container img:nth-child(1) {
+  transform: translateX(-100%);
+}
+
+.container img:nth-child(2) {
+  transform: translateX(100%);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+
+.imgs{
+  height: 25rem;
+  width: auto;
+}
+
+h1{
+  color: rgb(1, 1, 17);
+  font-weight: 600;
+  font-family:monospace;
+}
+

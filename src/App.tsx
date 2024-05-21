@@ -1,3 +1,7 @@
+// import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './Styles/App.css';
+import Contact from './components/Contact';
 
 import React from "react";
 import RoutesContinental from "./routers/Routes";
