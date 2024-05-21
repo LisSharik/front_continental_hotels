@@ -2,7 +2,7 @@ import React from 'react';
 
 const Profile: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-4xl mx-auto flex items-start space-x-8">
+    <div className="bg-white rounded-lg shadow-lg p-6 w-full h-full max-w-4xl mx-auto flex items-start space-x-8">
 
       <div className="flex flex-col items-center">
         <div className="w-36 h-36 bg-gray-500 rounded-full flex items-center justify-center text-white text-5xl">
