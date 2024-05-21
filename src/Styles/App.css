@@ -2,29 +2,31 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-#root {
-  max-width: auto !important;
-  background-size: cover;
-  width: auto !important;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 .container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua  ;
 
+}
+
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px !important;
+  width: 80%;
+  box-shadow: 0 0 2em rgba(8, 8, 8, 0.678);
 }
 
 .register-form{
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-radius: 18px !important;
-  box-shadow: 0 0 2em rgba(3, 0, 7, 0.551);
+  width: 80%;
+  box-shadow: 0 0 2em rgba(8, 8, 8, 0.678);
 }
 
 .container img {

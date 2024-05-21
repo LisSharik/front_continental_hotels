@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import '../Styles/App.css';
+import '../Styles/index.css';
 import { useNavigate } from 'react-router-dom';
 
 interface FormData {

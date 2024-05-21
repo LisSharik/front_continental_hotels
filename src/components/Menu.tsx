@@ -31,9 +31,9 @@ export default function Menu() {
         <Link to= {"/rooms"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Rooms</Link>
     
         
-        <Link to={"#"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Login</Link>
+        <Link to={"/login"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Login</Link>
         <div className="bg-CWhite h-full w-0.5 "></div> 
-        <Link to={"#"} className="btn-white font-[800]">Register</Link>
+        <Link to={"/register"} className="btn-white font-[800]">Register</Link>
       </div>
 
       <div className="md:hidden ml-32">
@@ -52,9 +52,9 @@ export default function Menu() {
         <div className="md:hidden bg-CBlack w-screen h-screen fixed top-0 space-y-10 py-9 flex flex-col items-center justify-center text-white font-Playfair font-medium text-base -z-10">
           <Link to={"/"} className='hover:text-CGold transition-all active::scale-[1.06]'>Home</Link>
           <Link to= {"/rooms"} className='hover:text-CGold transition-all active::scale-[1.06]'>Rooms</Link>
-          <Link to={"#"} className='hover:text-CGold transition-all active::scale-[1.06]'>Login</Link>
+          <Link to={"/login"} className='hover:text-CGold transition-all active::scale-[1.06]'>Login</Link>
           
-          <Link to={"#"} className="btn btn-white">Register</Link>
+          <Link to={"/register"} className="btn btn-white">Register</Link>
         </div>
       )}
     </header>
