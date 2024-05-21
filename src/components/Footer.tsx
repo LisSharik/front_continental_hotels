@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import imgLogoWhite from "../assets/img/logos/logo_blanco_texto.png";
 import 'boxicons/css/boxicons.css';
 
@@ -10,7 +11,7 @@ export default function Footer(){
 
                 {/* footer seccion 1 */}
                 <div className="w-auto h-auto flex justify-center items-center flex-col gap-4">
-                    <h2>Redes Sociales</h2>
+                    <h2>Social Media</h2>
                     <div className="w-auto h-auto flex justify-center items-center gap-7">
                         <a href="#"><i className='bx bxl-facebook social-media '></i></a>
                         <a href="#"><i className='bx bxl-instagram social-media' ></i></a>
@@ -21,7 +22,7 @@ export default function Footer(){
 
                 {/* footer seccion 2 */}
                 <div className="flex justify-start items-start flex-col gap-4  max-md:justify-center max-md:items-center">
-                    <h2>Información de contacto</h2>
+                    <h2>Contact information</h2>
                     <div className="flex justify-start flex-col font-light gap-1">
                         <div className="flex items-center justify-start gap-2 font-Lato">
                             <i className='bx bxs-map'></i>
@@ -41,19 +42,19 @@ export default function Footer(){
                 </div>
                 {/* footer seccion 3 */}
                 <div className="flex justify-start items-start flex-col gap-4 w-full max-md:justify-center max-md:items-center">
-                    <h2>Sobre Nosotros</h2>
-                    <p>Somos más que un hotel; somos un destino en sí mismo. Nuestro compromiso con la excelencia se refleja en cada aspecto de su estadía.</p>
+                    <h2>About Us</h2>
+                    <p>We are more than a hotel; we are a destination in itself. Our commitment to excellence is reflected in every aspect of your stay.</p>
                 </div>
 
                 {/* footer seccion 4 */}
                 <div className="flex justify-start items-start flex-col gap-4 max-md:w-full max-md:justify-center max-md:items-center">
-                    <h2>Explorar</h2>
+                    <h2>Explore</h2>
                     <div className="flex justify-start items-start flex-col text-[14px] font-[300] gap-2 max-md:justify-center max-md:items-center">
-                       <a href="#" className="hover:underline hover:text-CGold duration-300">Inicio</a>
-                       <a href="#" className="hover:underline hover:text-CGold duration-300">Habitaciones</a>
-                       <a href="#" className="hover:underline hover:text-CGold duration-300">Contactos</a>
-                       <a href="#" className="hover:underline hover:text-CGold duration-300">Iniciar Sesion</a>
-                       <a href="#" className="hover:underline hover:text-CGold duration-300">Registrarse</a>
+                       <Link to={"/"} className="hover:underline hover:text-CGold duration-300">Home</Link>
+                       <Link to= {"/rooms"} className="hover:underline hover:text-CGold duration-300">Rooms</Link>
+                       <Link to={"/contact"} className="hover:underline hover:text-CGold duration-300">Contacts</Link>
+                       <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Login</Link>
+                       <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Register</Link>
                     </div>
                 </div>
 

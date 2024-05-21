@@ -14,6 +14,8 @@
     --button-text-color-white: #070707; /* Color del texto del botón blanco */
   }
 
+
+  
 *{
   letter-spacing: .7px;
 }
@@ -45,15 +47,27 @@ p{
 .btn-black {
   background-color: var(--button-bg-color-black);
   color: var(--button-text-color-black);
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: lighter;
+  transition: .2s;
+  cursor: pointer;
   &:hover{
-      background-color: #0c0c0c;
+      background-color: #1d1d1d;
   }
 }
 
 .btn-white {
   background-color: var(--button-bg-color-white);
   color: var(--button-text-color-white);
-  font-weight: 700;
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .2s;
+  cursor: pointer;
+
   &:hover{
     @apply bg-CGold;
   }

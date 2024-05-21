@@ -1,12 +1,11 @@
-// src/App.tsx
+
 import React from "react";
-import AdminPage from "./pages/AdminPage";
-import Contact from "./components/Contact";
+import RoutesContinental from "./routers/Routes";
 
 const App: React.FC = () => {
     return (
       <div className="w-screen h-screen flex items-center justify-start flex-col ">
-        <AdminPage/>
+        <RoutesContinental/>
         
       </div>
     );
