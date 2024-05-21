@@ -1,68 +1,135 @@
+/* Fonts of project */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --button-bg-color-black: #070707; /* Color de fondo del botón negro */
+    --button-text-color-black: #F2F2F2; /* Color del texto del botón negro */
+    --button-bg-color-white: #ebebeb; /* Color de fondo del botón blanco */
+    --button-text-color-white: #070707; /* Color del texto del botón blanco */
+  }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+*{
+  letter-spacing: .7px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+body{
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+h1{
+  @apply text-CWhite;
+  @apply font-Playfair;
+  @apply text-big;
+  font-weight: 600;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h2{
+  font-size: 14px;
+  @apply font-Playfair;
+  font-weight: 700;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+p{
+  @apply font-Lato;
+  font-size: 14px;
+  font-weight: 300;
+}
+.btn-black {
+  background-color: var(--button-bg-color-black);
+  color: var(--button-text-color-black);
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: lighter;
+  transition: .2s;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  &:hover{
+      background-color: #1d1d1d;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.btn-white {
+  background-color: var(--button-bg-color-white);
+  color: var(--button-text-color-white);
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .2s;
+  cursor: pointer;
+
+  &:hover{
+    @apply bg-CGold;
   }
-  a:hover {
-    color: #747bff;
+}
+
+.btn-add{
+  font-weight: 500;
+  & i{
+    font-size: 24px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+.bx{
+  font-size: 16px;
+}
+
+.icons-admin{
+  font-size: 45px;
+}
+
+
+.admin-option{
+  padding-left: 15%;
+
+  & i{
+    font-size: 22px;
+  }
+  & p{
+    font-weight: 500 ;
+    @apply text-baseSecundary;
+  }
+
+
+} 
+
+.title i{
+  font-size: 40px;
+}
+
+
+
+.social-media{
+  font-size: 24px;
+  transition: .3s;
+  padding: 4px;
+  border-radius: 50%;
+  &:hover{
+    @apply bg-CGold;
+    @apply text-CBlack
+    
+  }
+}
+
+
+@media (max-width:768px){
+  .btn-add{
+    & i{
+      font-size: 22px;
+    }
+  }
+
+  .icon-table{
+       font-size: 12px;   
   }
 }
