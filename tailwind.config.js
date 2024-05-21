@@ -25,7 +25,9 @@ export default {
 
       fontSize: {
           big: "42px",
-          base: "14px"
+          base: "14px",
+          baseSecundary: "16px",
+          subtitulos: "24px",
       },
 
       

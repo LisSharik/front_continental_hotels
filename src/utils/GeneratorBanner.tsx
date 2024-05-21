@@ -5,12 +5,15 @@ interface BannerProps {
   imageUrls: string[];
 }
 
+
+
 const Banner: React.FC<BannerProps> = ({ imageUrls }) => {
+  
   // Verificar si hay solo una imagen
   if (imageUrls.length === 1) {
     // Si solo hay una imagen, mostrar solo esa imagen
     return (
-        <img src={imageUrls[0]} alt="Banner" className='w-full h-full object-cover bg-center' />
+        <img src={imageUrls[0]} alt="Banner" className='w-full h-full object-cover' />
     );
   }
 

@@ -20,12 +20,12 @@ interface ImgProps {
 
 const BannerBasic: React.FC<ImgProps> = ({ imgUrl, messageBanner, isVideo }) => {
     return (
-        <section id="banner" className="w-screen h-screen flex justify-center items-center relative">
-            <h1 className="text-center">{messageBanner}</h1>
+        <section id="banner" className="w-full h-full flex justify-center items-center relative">
+            <h1 className="text-center text-big">{messageBanner}</h1>
 
-            <div className="w-full h-full absolute -z-10 brightness-[.3] blur-[1px]">
+            <div className="w-full h-full absolute -z-10 brightness-[.2]">
                 {isVideo ? ( // Si isVideo es true, renderiza un video
-                    <video src={imgUrl.join()} className="w-full h-full"></video>
+                    <video src={imgUrl[0]} loop autoPlay muted className="w-full h-full object-cover bg-center"></video>
 
                 ) : ( // Si no es un video, renderiza imágenes
                     imgUrl.map((url, index) => (

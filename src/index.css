@@ -14,12 +14,16 @@
     --button-text-color-white: #070707; /* Color del texto del botón blanco */
   }
 
+
+  
 *{
   letter-spacing: .7px;
 }
 
 body{
-  overflow-x: hidden
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
 }
 
 h1{
@@ -43,23 +47,67 @@ p{
 .btn-black {
   background-color: var(--button-bg-color-black);
   color: var(--button-text-color-black);
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: lighter;
+  transition: .2s;
+  cursor: pointer;
   &:hover{
-      background-color: #0c0c0c;
+      background-color: #1d1d1d;
   }
 }
 
 .btn-white {
   background-color: var(--button-bg-color-white);
   color: var(--button-text-color-white);
-  font-weight: 700;
+  @apply font-Playfair;
+  padding: 10px  30px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .2s;
+  cursor: pointer;
+
   &:hover{
     @apply bg-CGold;
+  }
+}
+
+.btn-add{
+  font-weight: 500;
+  & i{
+    font-size: 24px;
   }
 }
 
 .bx{
   font-size: 16px;
 }
+
+.icons-admin{
+  font-size: 45px;
+}
+
+
+.admin-option{
+  padding-left: 15%;
+
+  & i{
+    font-size: 22px;
+  }
+  & p{
+    font-weight: 500 ;
+    @apply text-baseSecundary;
+  }
+
+
+} 
+
+.title i{
+  font-size: 40px;
+}
+
+
 
 .social-media{
   font-size: 24px;
@@ -70,5 +118,18 @@ p{
     @apply bg-CGold;
     @apply text-CBlack
     
+  }
+}
+
+
+@media (max-width:768px){
+  .btn-add{
+    & i{
+      font-size: 22px;
+    }
+  }
+
+  .icon-table{
+       font-size: 12px;   
   }
 }
