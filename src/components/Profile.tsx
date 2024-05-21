@@ -8,7 +8,7 @@ const Profile: React.FC = () => {
         <div className="w-36 h-36 bg-gray-500 rounded-full flex items-center justify-center text-white text-5xl">
           👤
         </div>
-        <div className="mt-4 text-lg font-semibold">Nombre del Usuario</div>
+        <div className="mt-4 text-lg font-semibold">Nombre del Usuario </div>
       </div>
       <div className="w-full">
         <div className="flex space-x-4 mb-4">
@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
             <input type="tel" id="mobile" placeholder="Ingrese su número de celular" className="w-full p-2 border border-gray-300 rounded" />
           </div>
         </div>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Editar</button>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Editar.</button>
       </div>
     </div>
   );
