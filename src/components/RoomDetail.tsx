@@ -1,36 +1,48 @@
+// RoomDetail.tsx
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 type Room = {
-	name: string;
-	description: string;
-	price: string;
+  name: string;
+  description: string;
+  price: number;
+  capacity: number;
 };
 
-const room: Room = {
-	name: "Habitacion luxury",
-	description:
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus aliquam velit, et laoreet neque malesuada vitae. Vivamus a elit vel dui lobortis aliquam. Ut vestibulum consequat metus sit amet suscipit. Aenean et luctus eros. In leo arcu, facilisis at turpis ac, convallis blandit sapien. Vestibulum ac magna a quam ultricies sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc euismod blandit metus mollis ultricies. Quisque at vulputate dolor. Phasellus nec arcu nec nunc malesuada condimentum. Nulla sed ligula eu odio pharetra vulputate.",
-	price: "$1,000.000",
+type TypeRoom = {
+  name: string;
+  description: string;
 };
 
 const RoomDetail: React.FC = () => {
-	return (
-		<div className="w-screen h-auto flex flex-col justify-between  items-center py-10">
-			<div className="w-[80%] flex justify-center items-center flex-col gap-8">
-				<h2 className="font-Playfair text-subtitulos text-center">
-					{room.name}
-				</h2>
-				<p
-					className="
-        text-base  text-justify"
-				>
-					{room.description}
-				</p>
+  const location = useLocation();
+  const { typeRoom, room } = location.state as { typeRoom: TypeRoom; room: Room };
 
-				<p className="font-Playfair text-subtitulos text-CGold">{room.price}</p>
-			</div>
-		</div>
-	);
+  const formatPrice = (price: number) => {
+    return `$${price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
+  };
+
+  return (
+    <div className="w-screen h-auto flex flex-col justify-between items-center py-10 bg-[#f2f2f2]">
+      <div className="w-[80%] flex justify-center items-center flex-col gap-8">
+        <h2 className="font-Playfair text-subtitulos text-center">
+          {typeRoom.name}
+        </h2>
+        <p className="text-base text-justify">
+          {typeRoom.description}
+        </p>
+        <p className="text-base text-justify">
+          {room.description}
+        </p>
+        <p className="font-Playfair text-subtitulos text-CGold">
+          {formatPrice(room.price)}
+        </p>
+        <p className="text-base text-justify">
+          Capacity: {room.capacity} persons
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default RoomDetail;

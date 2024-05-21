@@ -25,11 +25,11 @@ const Contact: React.FC = () => {
 	};
 
 	return (
-		<>
-			<div className="pt-16 flex flex-col items-center justify-center text-black">
-				<h1 className="text-black text-2xl">Contact</h1>
+		<div className="w-full h-auto bg-CGray px-[10%] py-16">
+			<div className=" flex flex-col items-center justify-center ">
+				<h1 className="text-CBlack font-bold text-3xl">Contact</h1>
 			</div>
-			<div className="bg-gray-100 flex flex-col items-center m-5 lg:flex-row lg:justify-between">
+			<div className=" flex flex-col items-center m-5 lg:flex-row lg:justify-between ">
 				<div className="flex flex-col items-start m-5 lg:w-[45%]">
 					<form
 						action="https://formspree.io/f/mvoeqlkn"
@@ -76,11 +76,11 @@ const Contact: React.FC = () => {
 						</button>
 					</form>
 				</div>
-				<div className="flex items-center justify-center ml-7 lg:w-[45%]">
+				<div className="flex items-center justify-center w-[45%] max-md:w-screen">
 					<iframe
 						title="Mapa de Google Maps"
 						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1986.4880294789813!2d-75.59857695792913!3d6.244636873141845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428b9e64f7955%3A0x5095d1a8b5b5b3d2!2sCentro%20Comercial%20de%20Moda%20Outlet%20Medellin!5e0!3m2!1ses-419!2sco!4v1620155277368!5m2!1ses-419!2sco"
-						width="450"
+						width="100%"
 						height="350"
 						className="border-0 rounded-lg"
 						allowFullScreen={true}
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
 					></iframe>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

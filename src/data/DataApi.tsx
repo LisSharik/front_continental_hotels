@@ -1,15 +1,21 @@
 export const fetchData = async (apiUrl: string, page: number, pageSize: number) => {
-    try {
-      const response = await fetch(`${apiUrl}?page=${page}&size=${pageSize}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      throw error;
+  try {
+    let fullUrl = apiUrl;
+    if (page !== undefined && pageSize !== undefined) {
+      fullUrl += `?page=${page}&size=${pageSize}`;
     }
+
+    const response = await fetch(fullUrl);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
   };
   
   export const createData = async (url: string, data: any) => {

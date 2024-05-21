@@ -1,60 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Button } from "@nextui-org/react";
+import {  API_URLS } from "../data/ApiUrls";
+import { fetchData } from "../data/DataApi"
 
-const rooms = [
-	{
-		title: "Emerald King",
-		description:
-			"This spacious 46m² apartment features one bedroom with... television with DirecTV.",
-		image:
-			"https://www.freepik.com/free-photo/luxury-bedroom-hotel_4692014.htm#fromView=search&page=1&position=18&uuid=26a8f974-e2b2-4734-8ee3-fa12aefe9108",
-	},
-	{
-		title: "Emerald King",
-		description:
-			"This spacious 46m² apartment features one bedroom with... television with DirecTV.",
-		image:
-			"https://www.freepik.com/free-photo/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living_18320830.htm#fromView=search&page=1&position=39&uuid=f2ef3f99-d9a8-4ed8-a097-d0286e8b56c2",
-	},
-	{
-		title: "Emerald King",
-		description:
-			"This spacious 46m² apartment features one bedroom with... television with DirecTV.",
-		image:
-			"https://www.freepik.com/free-ai-image/room-interior-hotel-bedroom_58557009.htm#fromView=search&page=1&position=46&uuid=26a8f974-e2b2-4734-8ee3-fa12aefe9108",
-	},
+const images = [
+  "https://img.freepik.com/free-photo/luxury-bedroom-hotel_1150-10836.jpg",
+  "https://img.freepik.com/free-photo/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living_105762-2018.jpg",
+  "https://img.freepik.com/free-photo/room-interior-hotel-bedroom_23-2150683481.jpg"
 ];
 
 const LuxuryRooms: React.FC = () => {
-	return (
-		<div className="bg-white py-16">
-			<h2 className="text-3xl font-Playfair font-bold text-center mb-8">
-				Luxury rooms
-			</h2>
-			<div className="flex justify-center space-x-8">
-				{rooms.map((room, index) => (
-					<div
-						key={index}
-						className="max-w-sm rounded overflow-hidden shadow-lg"
-					>
-						<img className="w-full" src={room.image} alt={room.title} />
-						<div className="px-6 py-4">
-							<div className="font-bold text-xl mb-2 font-Playfair">
-								{room.title}
-							</div>
-							<p className="text-gray-700 text-base font-Lato">
-								{room.description}
-							</p>
-						</div>
-						<div className="px-6 pt-4 pb-2">
-							<button className="btn-black font-Lato py-2 px-4 rounded">
-								more details
-							</button>
-						</div>
-					</div>
-				))}
-			</div>
-		</div>
-	);
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const data = await fetchData(API_URLS.ROOMSTYPES, 1, 3); // Obtener solo 3 tipos de habitación
+        const roomsWithImages = data.content.map((room, index) => ({
+          ...room,
+          image: images[index % images.length] // Asignar una imagen de la lista
+        }));
+        setRooms(roomsWithImages);
+      } catch (error) {
+        console.error("Error fetching room types:", error);
+      }
+    };
+
+    fetchRooms();
+  }, []);
+
+  return (
+    <div className="bg-CWhite w-full h-auto py-16 flex justify-center items-center flex-col gap-14 max-md:flex-col">
+      <h2 className="text-3xl font-bold text-center">Luxury rooms</h2>
+      <div className="flex justify-center items-start gap-8 w-[80%] max-md:flex-col max-md:w-screen">
+        {rooms.map((room, index) => (
+          <div
+            key={index}
+            className="w-[40vw] h-auto overflow-hidden flex flex-col justify-center items-start  gap-4 max-md:w-[90vw]"
+          >
+            <img className="w-full h-44" src={room.image} alt={room.name} />
+            <div className="flex flex-col justify-start items-center gap-4">
+              <div className="font-bold text-xl  font-Playfair">
+                {room.name}
+              </div>
+              <p className="text-gray-700 text-base text-center">
+                {room.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <a href="#" className="btn-black">View More Rooms</a>
+    </div>
+  );
 };
 
 export default LuxuryRooms;
