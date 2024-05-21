@@ -54,6 +54,8 @@ export default function Footer(){
                        <Link to= {"/rooms"} className="hover:underline hover:text-CGold duration-300">Rooms</Link>
                        <Link to={"/admin-page"} className="hover:underline hover:text-CGold duration-300">Admin</Link>
                        <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Login</Link>
+                       <Link to= {"/profile"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Profile</Link>
+
                        <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Register</Link>
                     </div>
                 </div>

@@ -29,6 +29,7 @@ export default function Menu() {
       <div className="hidden md:flex items-center space-x-8 text-CWhite font-Playfair font-medium text-base h-1/2">
         <Link to={"/"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Home</Link>
         <Link to= {"/rooms"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Rooms</Link>
+    
         
         <Link to={"#"} className='hover:text-CGold transition-all hover:scale-[1.06]'>Login</Link>
         <div className="bg-CWhite h-full w-0.5 "></div> 
