@@ -1,7 +1,9 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode';
 import '../Styles/App.css';
 import '../Styles/index.css';
-import { useNavigate } from 'react-router-dom';
+
 
 interface FormData {
   name: string;
@@ -9,6 +11,10 @@ interface FormData {
   phone: string;
   email: string;
   password: string;
+}
+
+interface TokenPayload {
+  role: string;
 }
 
 const RegisterForm: React.FC = () => {
@@ -37,12 +43,22 @@ const RegisterForm: React.FC = () => {
         },
         body: JSON.stringify(formData),
       });
+
       if (response.ok) {
         const data = await response.json();
         const token = data.access_token;
         localStorage.setItem('authToken', token);
-        console.log('Registro exitoso');
-        navigate('/');
+
+        // Decodifica el token para obtener el rol
+        const decodedToken = jwtDecode<TokenPayload>(token);
+        const userRole = decodedToken.role;
+
+        // Redirige según el rol
+        if (userRole === 'admin') {
+          navigate('/admin-page');
+        } else {
+          navigate('/rooms');
+        }
       } else {
         const errorData = await response.json();
         console.error('Error en el registro', errorData);
@@ -55,7 +71,7 @@ const RegisterForm: React.FC = () => {
   return (
     <div className='containers'>
       <h1>Register</h1>
-      <br/>
+      <br />
       <div className="register-form">
         <form onSubmit={handleSubmit} className='register'>
           <label>Name</label>
@@ -66,7 +82,6 @@ const RegisterForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-
 
           <label>C.C - T.I</label>
           <input
@@ -103,7 +118,7 @@ const RegisterForm: React.FC = () => {
             onChange={handleChange}
             required
           />
-          <br/>
+          <br />
 
           <button type="submit">Sign up</button>
         </form>
