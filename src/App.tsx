@@ -1,6 +1,5 @@
 
 import React from "react";
-import HomePage from "./pages/HomePage";
 import RoutesContinental from "./routers/Routes";
 
 const App: React.FC = () => {
