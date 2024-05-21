@@ -10,7 +10,7 @@ const RoutesContinental: React.FC = () =>{
         <BrowserRouter>
             <Routes>
                 <Route path="/" element = {<HomePage/>}/>
-                <Route path="/admin" element={<AdminPage/>}/>
+                <Route path="/admin-page" element={<AdminPage/>}/>
                 <Route path="/rooms" element ={<RoomsPage/>}/>
                 <Route path="/room/:roomName" element={<RoomDetailPage />} />
             </Routes>

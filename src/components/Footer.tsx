@@ -52,7 +52,7 @@ export default function Footer(){
                     <div className="flex justify-start items-start flex-col text-[14px] font-[300] gap-2 max-md:justify-center max-md:items-center">
                        <Link to={"/"} className="hover:underline hover:text-CGold duration-300">Home</Link>
                        <Link to= {"/rooms"} className="hover:underline hover:text-CGold duration-300">Rooms</Link>
-                       <Link to={"/contact"} className="hover:underline hover:text-CGold duration-300">Contacts</Link>
+                       <Link to={"/admin-page"} className="hover:underline hover:text-CGold duration-300">Admin</Link>
                        <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Login</Link>
                        <Link to={"#"} className="hover:underline hover:text-CGold duration-300">Register</Link>
                     </div>

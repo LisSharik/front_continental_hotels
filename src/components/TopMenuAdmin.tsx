@@ -1,5 +1,6 @@
 import 'boxicons/css/boxicons.css';
 import imgLogoTextoBlanco from "../assets/img/logos/logo_blanco_solo_texto.png";
+import { Link } from 'react-router-dom';
 
 export default function TopMenuAdmin(){
     return (
@@ -15,10 +16,10 @@ export default function TopMenuAdmin(){
                 <img src={imgLogoTextoBlanco} width={"180px"} alt="" />
             </div>
             <div>
-                <button className='hover:scale-110 transition-[.2s]'>
+                <Link to={"/"} className='hover:scale-110 transition-[.2s]'>
  
                     <i className='bx bx-log-out icons-admin'></i>
-                </button>
+                </Link>
             </div>
         </section>
     )
